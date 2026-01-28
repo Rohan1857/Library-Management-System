@@ -58,7 +58,8 @@ console.log('Auto-allocation service initialized - checking every 5 minutes');
 // Enable CORS
 const allowedOrigins = [
   process.env.FRONTEND_URL,
-  'https://library-management-system-uzped4sbo-rohans-projects-40a5b29d.vercel.app'
+  'https://library-management-system-uzped4sbo-rohans-projects-40a5b29d.vercel.app',
+  'https://library-management-system-git-main-rohans-projects-40a5b29d.vercel.app'
 ].filter(Boolean); // Remove undefined values
 
 app.use(
@@ -66,11 +67,15 @@ app.use(
     origin: (origin, callback) => {
       // Allow requests with no origin (like mobile apps or curl requests)
       if (!origin) return callback(null, true);
-      if (allowedOrigins.indexOf(origin) === -1) {
-        const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
-        return callback(new Error(msg), false);
+      
+      // Check exact match or Vercel preview deployments
+      if (allowedOrigins.indexOf(origin) !== -1 || 
+          (origin && origin.includes('rohans-projects-40a5b29d.vercel.app'))) {
+        return callback(null, true);
       }
-      return callback(null, true);
+      
+      const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+      return callback(new Error(msg), false);
     },
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
     credentials: true,
