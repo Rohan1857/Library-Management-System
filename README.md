@@ -2,7 +2,7 @@
 
 A full-stack Library Management System built with the MERN stack (MongoDB, Express.js, React, Node.js). This application provides a comprehensive solution for managing library operations including book management, borrowing, reservations, fines, donations, and more.
 
-Live Link - https://library-management-system-git-main-rohans-projects-40a5b29d.vercel.app/
+Live Link - https://library-system-rohan.vercel.app/
 
 ![License](https://img.shields.io/badge/license-ISC-blue.svg)
 ![Node](https://img.shields.io/badge/node-%3E%3D18.0.0-green.svg)
