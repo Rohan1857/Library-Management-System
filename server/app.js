@@ -60,7 +60,7 @@ const allowedOrigins = [
   process.env.FRONTEND_URL,
   'http://localhost:5173',
   'http://localhost:5174',
-  'https://library-management-system-gamma-sable.vercel.app'
+  'https://library-management-system-gamma-sable.vercel.app',
   'https://library-management-system-git-main-rohans-projects-40a5b29d.vercel.app/'
 ].filter(Boolean); // Remove undefined values
 
