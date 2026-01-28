@@ -59,7 +59,8 @@ console.log('Auto-allocation service initialized - checking every 5 minutes');
 const allowedOrigins = [
   process.env.FRONTEND_URL,
   'https://library-management-system-uzped4sbo-rohans-projects-40a5b29d.vercel.app',
-  'https://library-management-system-git-main-rohans-projects-40a5b29d.vercel.app'
+  'https://library-management-system-git-main-rohans-projects-40a5b29d.vercel.app',
+  'https://library-system-rohan.vercel.app'
 ].filter(Boolean); // Remove undefined values
 
 app.use(
